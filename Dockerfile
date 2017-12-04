@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 
 USER celery
 
-CMD [ "celery", "-A", "tasks", "worker", "tasks.hello_world" ]
+CMD [ "celery", "-A", "tasks", "worker" ]

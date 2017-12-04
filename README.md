@@ -18,7 +18,7 @@ pip install -r requirements.txt
 In terminal window run the following from the project root folder:
 ```
 workon celeryspike
-python app.py
+celery -A tasks worker
 ```
 
 ### Execute task
@@ -26,7 +26,7 @@ python app.py
 In terminal window run the following from the project root folder:
 ```
 workon celeryspike
-celery -A app call tasks.hello_world
+celery -A tasks call tasks.hello_world
 ```
 
 ### Monitoring
