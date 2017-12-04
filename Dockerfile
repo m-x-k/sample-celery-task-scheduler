@@ -5,12 +5,13 @@ RUN apt-get update && apt-get install -y \
     service rabbitmq-server start
 
 RUN useradd -ms /bin/bash celery
-USER celery
 
 COPY . /
 
 WORKDIR /
 
 RUN pip install -r requirements.txt
+
+USER celery
 
 CMD [ "celery", "-A", "tasks", "worker", "tasks.hello_world" ]
